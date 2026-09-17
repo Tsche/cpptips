@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">cpp.tips</title>
+  <desc id="description">C++ articles, tips, and updates.</desc>
+
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#1e3a5f"/>
+    </linearGradient>
+
+    <path id="logo-c" d="M334 2Q340 0 346 3L651 173Q656 176 655 182Q654 187 649 190L520 264Q516 267 512 264A208 208 0 1 0 506 488Q510 485 515 488L635 555Q641 559 640 564Q639 569 634 572L347 736Q340 740 333 736L19 560Q2 551 2 538V210Q2 196 18 187Z"/>
+    <clipPath id="logo-clip"><use xlink:href="#logo-c"/></clipPath>
+    <linearGradient id="logo-main" gradientUnits="userSpaceOnUse" x1="23" y1="90" x2="94" y2="362">
+      <stop offset="0" stop-color="#3793ee"/>
+      <stop offset="1" stop-color="#1f69ba"/>
+    </linearGradient>
+    <linearGradient id="logo-upper" gradientUnits="userSpaceOnUse" x1="77" y1="-27" x2="-112" y2="40">
+      <stop offset="0" stop-color="#2879cd"/>
+      <stop offset="1" stop-color="#14529a"/>
+    </linearGradient>
+    <linearGradient id="logo-middle" gradientUnits="userSpaceOnUse" x1="80" y1="-13" x2="-81" y2="13">
+      <stop offset="0" stop-color="#104389"/>
+      <stop offset="1" stop-color="#0c366d"/>
+    </linearGradient>
+    <linearGradient id="logo-lower" gradientUnits="userSpaceOnUse" x1="171" y1="-54" x2="-148" y2="47">
+      <stop offset="0" stop-color="#143e87"/>
+      <stop offset="1" stop-color="#0e2b52"/>
+    </linearGradient>
+    <linearGradient id="logo-right" gradientUnits="userSpaceOnUse" x1="710" y1="434" x2="442" y2="271">
+      <stop offset="0" stop-color="#1e64b3"/>
+      <stop offset="1" stop-color="#0e3c78"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <rect x="48" y="48" width="1104" height="534" rx="27" fill="#f8fafc"/>
+
+  <g transform="translate(111 125.2) scale(.42351275)" shape-rendering="geometricPrecision">
+    <use xlink:href="#logo-c" fill="url(#logo-main)"/>
+    <g clip-path="url(#logo-clip)">
+      <polygon points="-100,-100 180,-11 44,361 -100,450" fill="url(#logo-upper)"/>
+      <polygon points="-100,439 145,301 145,456 -100,618" fill="url(#logo-middle)"/>
+      <polygon points="-100,618 145,456 249,368 425,688 500,800 -100,800" fill="url(#logo-lower)"/>
+      <polygon points="235,555 212,381 700,550 560,800 404,688" fill="url(#logo-right)"/>
+    </g>
+    <use xlink:href="#logo-c" fill="none" stroke="#59b8ff" stroke-width=".55" stroke-linejoin="round"/>
+    <path d="M416 296Q411 296 411 301V351H364Q359 351 359 356V403Q359 408 364 408H411V457Q411 462 416 462H463Q468 462 468 457V408H515Q520 408 520 403V356Q520 351 515 351H468V301Q468 296 463 296Z" fill="#0d2a51" stroke="#3d6e9f" stroke-width=".7"/>
+    <path d="M416 296Q411 296 411 301V351H364Q359 351 359 356V403Q359 408 364 408H411V457Q411 462 416 462H463Q468 462 468 457V408H515Q520 408 520 403V356Q520 351 515 351H468V301Q468 296 463 296Z" transform="translate(185 296) scale(1 1.006024) translate(0 -296)" fill="#0d2a51" stroke="#3d6e9f" stroke-width=".7"/>
+  </g>
+
+  <g font-family="JetBrains Mono, monospace">
+    <text x="456" y="295" font-size="112" font-weight="700">
+      <tspan fill="#111827">cpp.</tspan><tspan fill="#2563eb">tips</tspan>
+    </text>
+    <text x="456" y="360" fill="#526079" font-size="26" font-weight="400" letter-spacing="0.2">C++ articles, tips, and updates.</text>
+  </g>
+</svg>

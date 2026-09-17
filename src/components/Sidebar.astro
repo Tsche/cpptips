@@ -1,0 +1,12 @@
+---
+import SharedSidebar from '@tsche/astro-blog-theme/components/Sidebar.astro';
+import BrandMark from './BrandMark.astro';
+---
+
+<SharedSidebar>
+  <BrandMark slot="brand-mark" />
+  <Fragment slot="brand-text">
+    <strong><span>C++</span><span>Tips</span></strong>
+    <small>Notes and techniques</small>
+  </Fragment>
+</SharedSidebar>

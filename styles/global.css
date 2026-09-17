@@ -1,0 +1,132 @@
+@import '@tsche/astro-blog-theme/styles.css';
+
+/* Tailwind scans site-owned templates and content from this entry point. */
+@source '../src';
+@source '../content';
+
+.snail-link {
+  position: fixed;
+  z-index: 35;
+  right: auto;
+  bottom: 0.3rem;
+  left: 0.6rem;
+  display: inline-block;
+  filter: drop-shadow(0 0.5rem 0.55rem rgb(26 20 47 / 20%));
+  transform: translateX(0);
+}
+
+.snail-link--animated {
+  --snail-trip-duration: 20s;
+  --snail-crawl-count: 10;
+
+  animation: snail-arrives var(--snail-trip-duration) 1s linear forwards;
+  transform: translateX(calc(100vw + 1rem));
+}
+
+@media (min-width: 768px) {
+  .snail-link--animated {
+    --snail-trip-duration: 44s;
+    --snail-crawl-count: 22;
+  }
+}
+
+@media (min-width: 1440px) {
+  .snail-link--animated {
+    --snail-trip-duration: 50s;
+    --snail-crawl-count: 25;
+  }
+}
+
+@media (min-width: 1920px) {
+  .snail-link--animated {
+    --snail-trip-duration: 80s;
+    --snail-crawl-count: 40;
+  }
+}
+
+@media (min-width: 2560px) {
+  .snail-link--animated {
+    --snail-trip-duration: 94s;
+    --snail-crawl-count: 47;
+  }
+}
+
+@keyframes snail-arrives {
+  from {
+    transform: translateX(calc(100vw + 1rem));
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.snail-link img {
+  display: block;
+  max-width: none;
+  transition: transform 0.25s ease;
+}
+
+.snail-link--animated img {
+  animation: snail-crawl 2s 1s ease-in-out var(--snail-crawl-count);
+}
+
+@keyframes snail-crawl {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  25% {
+    translate: 0 -2px;
+  }
+
+  50% {
+    translate: 0 0;
+  }
+
+  75% {
+    translate: 0 2px;
+  }
+}
+
+.snail-link:hover img {
+  transform: rotate(-3deg) scale(1.02);
+}
+
+.snail-link span {
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: calc(100% + 0.4rem);
+  width: max-content;
+  padding: 0.25rem 0.45rem;
+  opacity: 0;
+  border: 1px solid var(--color-base-300);
+  border-radius: 0.3rem;
+  color: var(--color-base-content);
+  background: var(--color-base-100);
+  font: 0.62rem var(--font-mono);
+  pointer-events: none;
+  transform: translate(-0.4rem, -50%);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.snail-link:hover span,
+.snail-link:focus-visible span {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+footer[aria-label='Site Info'] {
+  padding-left: 6rem;
+}
+
+@media (max-width: 640px) {
+  footer[aria-label='Site Info'] {
+    padding-left: 4.5rem;
+  }
+}

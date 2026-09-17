@@ -1,0 +1,16 @@
+---
+import snail from '../../assets/images/site/snail.svg';
+
+const isLandingPage = Astro.url.pathname === '/';
+const snailSize = isLandingPage ? 48 : 32;
+---
+
+<a
+  class:list={['snail-link', { 'snail-link--animated': isLandingPage }]}
+  href="https://pydong.org"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img src={snail.src} width={snailSize} height={snailSize} alt="Pydong" />
+  <span>Wrong language? How about Python shenanigans instead?</span>
+</a>
