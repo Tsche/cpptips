@@ -51,7 +51,7 @@ export const SITE: SiteConfig = {
       label: 'Tips',
       singularLabel: 'Tip',
       description: "Tips and tricks that didn't fill a proper long-form article",
-      eyebrow: 'Short form',
+      preview: 'excerpt',
       landingPageLimit: 4,
       postsPerPage: 8,
     },
@@ -59,7 +59,7 @@ export const SITE: SiteConfig = {
       label: 'Articles',
       singularLabel: 'Article',
       description: 'Long-form C++ articles',
-      eyebrow: 'Long form',
+      preview: 'description',
       landingPageLimit: 5,
       postsPerPage: 8,
     },
@@ -67,7 +67,7 @@ export const SITE: SiteConfig = {
       label: 'Updates',
       singularLabel: 'Update',
       description: "Updates on cool stuff that's happening",
-      eyebrow: 'Recent changes',
+      preview: 'excerpt',
       landingPageLimit: 5,
       postsPerPage: 8,
     },
@@ -103,8 +103,8 @@ export const SITE: SiteConfig = {
   autoOgImage: true,
   analytics: {
     umami: {
-      websiteId: import.meta.env.PUBLIC_UMAMI_WEBSITE_ID ?? '',
-      scriptUrl: 'https://cloud.umami.is/script.js',
+      websiteId: '0d7d7a2d-8fdf-49fb-b9fb-c9b0637cc16e',
+      scriptUrl: 'https://analytics.cpp.social/script.js',
       domains: ['cpp.tips'],
       respectDoNotTrack: true,
     },
@@ -130,7 +130,7 @@ export const NAV = {
     { label: 'Tags', href: '/tags' },
     { label: 'Categories', href: '/categories' },
     { label: 'RSS', href: '/rss.xml', icon: 'lucide:rss' },
-    { label: 'Sitemap', href: '/sitemap-index.xml' },
+    { label: 'Sitemap', href: '/sitemap.xml' },
   ],
 } as const satisfies NavigationConfig;
 

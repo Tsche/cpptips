@@ -48,6 +48,10 @@ The default is `showcase: auto`: the newest eligible article, tip, and update
 are included first, then the remaining recent posts fill the reel. `highlighted: true`
 remains a compatibility alias for `showcase: feature`; `showcase: hide` wins if both are set.
 
+Mark an article as outdated with an explanation, for example
+`outdated: "This no longer reflects the current standard."` An optional
+`outdatedLink` can link to a replacement article when one is available.
+
 ## Develop
 
 Install [Bun](https://bun.sh/), then run:
