@@ -330,6 +330,7 @@ consteval auto expand(R const& range) {
 ```
 
 This has the added benefit of giving us the items as a pack.
+
 </Aside>
 
 With `expand` we can now print some information about a lambda closure type, so let's do that.
@@ -361,6 +362,7 @@ Good we can get types of lambda captures and references are properly handled. Ev
 **Order of captures**
 
 Note that [[expr.prim.lambda.capture]/10](https://standards.pydong.org/c++/expr.prim.lambda.capture#10) makes the declaration order of the lambda closure's members **unspecified**. While the following hackery with lambdas might work, it is not guaranteed.
+
 </Aside>
 
 ## Parsing the capture list
@@ -487,6 +489,7 @@ struct NameParser : Parser {
 **Constexpr Exceptions**
 
 [P3068](https://wg21.link/p3068) proposes support for exceptions during constant evaluation. If accepted, we could make `names` a local variable and have `parse` return it. Invalid captures could then be rejected by throwing an exception.
+
 </Aside>
 
 ## Injecting the kwargs container type
@@ -614,6 +617,7 @@ int main() {
 <Aside type="caution">
 
 Note that this only works with free functions and static member functions. Function templates and function objects are **not supported**.
+
 </Aside>
 
 ### Implementation
@@ -692,6 +696,7 @@ struct Replicator {
 ```
 
 Additionally, we introduce a shorthand `sequence(N)`, which is equivalent to `expand(std::ranges::iota_view{0U, N})`.
+
 </Aside>
 
 To do this, we need two nested expansions. The first expansion must expand the reflected parameters of `F`, except for the first `sizeof...(Args) - 1` parameters. The second expansion shall expand an integer sequence from `0` to `sizeof...(Args) - 1`.

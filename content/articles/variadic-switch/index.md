@@ -41,6 +41,7 @@ int h();
 ```
 
 Since it is not defined compilers cannot possibly inline calls to it. This should come in handy once we look at the generated assembly (and optimization passes) to see if compilers were able to understand our code.
+
 </Aside>
 
 Consider a simple switch such as:
@@ -184,6 +185,7 @@ In the `visit` example implementations for all strategies, `get` is used for cla
 However, in the linked CE examples you will see `__unchecked_get` instead, which (for libc++) is essentially the same as `get` minus boundary checks.
 
 This is mostly done to make the emitted assembly easier to read.
+
 </Aside>
 
 ```c++
@@ -318,11 +320,11 @@ While the `inline` keyword's more interesting use is to collapse multiple defini
 
 Unfortunately it is not possible to force inlining in a portable way. However, most compilers have special attributes for this very purpose.
 
-| Compiler | Attribute |
-|---|---|---|
-| GCC | `[[gnu::always_inline]]` |
-| Clang | `[[clang::always_inline]]` or `[[gnu::always_inline]]` |
-| MSVC | `[[msvc::forceinline]]` |
+| Compiler | Attribute                                              |
+| -------- | ------------------------------------------------------ |
+| GCC      | `[[gnu::always_inline]]`                               |
+| Clang    | `[[clang::always_inline]]` or `[[gnu::always_inline]]` |
+| MSVC     | `[[msvc::forceinline]]`                                |
 
 We can use [Compiler Explorer's clang Opt Pipeline Viewer](https://clang.godbolt.org/z/5MP61jTvr) feature to verify all calls to `visit` were inlined. After the `SimplifyCFG` optimization pass the chained comparisons are now combined into a switch. If we do not force inlining, switches may already be generated during the earlier `InlinerPass` pass and increase the calculated inlining cost beyond the threshold, resulting in multiple jump tables.
 
@@ -703,7 +705,6 @@ int visit(int x) {
 
 While this compiles with the clang-p2996 fork at the time of writing, this is unfortunately **not intended to work**.
 
-
 <Aside type="note">
 To explain why, we need to dig into the proposal a little (Thanks to Dan Katz for clarifying this!).
 
@@ -716,6 +717,7 @@ To explain why, we need to dig into the proposal a little (Thanks to Dan Katz fo
 > a `case` or `default` label appearing within `S` shall be associated with a `switch` statement ([stmt.switch](https://standards.pydong.org/c++/stmt.switch)) **within `S`**
 
 Unfortunately the `switch` statement in our example is _outside_ of the contained statement `S` of the expansion statement. We are therefore not allowed to do this.
+
 </Aside>
 
 ### Optimizer to the rescue
@@ -758,6 +760,7 @@ int visit(int x) {
 ```
 
 [View on Compiler Explorer](https://godbolt.org/z/j37MKPnKh)
+
 </Aside>
 
 ### Generic visit
@@ -786,4 +789,5 @@ constexpr decltype(auto) visit(F&& fnc, V&& variant) {
 <Aside type="tip">
 
 For a real world example check out [rsl/variant](https://github.com/Tsche/rsl/blob/master/include/rsl/variant).
+
 </Aside>

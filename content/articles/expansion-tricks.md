@@ -319,6 +319,7 @@ and respectively
    // ...
 });
 ```
+
 </Aside>
 
 ### Structured bindings
@@ -404,8 +405,8 @@ using f = [:substitute(^^Test, {promote("foo")}):]; // ok
 ```
 
 [Run on Compiler Explorer](https://godbolt.org/z/qon8svf4P)
-</Aside>
 
+</Aside>
 
 #### Implementing the tuple protocol
 
@@ -494,4 +495,5 @@ constexpr auto [...Idx] = std::make_index_sequence<Count>();
 ```
 
 [Run on Compiler Explorer](https://godbolt.org/z/Gr6GzorYM)
+
 </Aside>

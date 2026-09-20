@@ -18,7 +18,9 @@ a compiler project, or any organization.
 Individual posts only reflect the opinions of the respective author(s).
 
 ## About the author
+
 ### Matthias Wippich
+
 I’m a member of the C++ committee (formally ISO/IEC JTC1/SC22/WG21) and IEEE. In my little free time I sporadically contribute to the LLVM project/clang and do a lot of gardening. I also run a [C++ Community](https://discord.com/invite/byZvFu7d94) on the Discord platform.
 
 I used to study games engineering at [TUM](https://www.tum.de/) and am currently pursuing a degree in computational linguistics at [LMU](https://www.lmu.de/). To finance all this, I'm also working in the embedded firmware team of a life sciences and lab automation company.

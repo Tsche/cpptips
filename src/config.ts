@@ -1,10 +1,6 @@
 import iconImg from '../assets/images/site/icon.svg';
 import ogDefaultImg from '../assets/images/site/og-default.png';
-import type {
-  GiscusConfig,
-  NavigationConfig,
-  SiteConfig,
-} from '@tsche/astro-blog-theme/config';
+import type { GiscusConfig, NavigationConfig, SiteConfig } from '@tsche/astro-blog-theme/config';
 
 /**
  * Global site configuration.
