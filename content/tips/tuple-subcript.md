@@ -20,7 +20,7 @@ f(tup[0], tup[2]);
 
 <!-- more -->
 
-This code can be made valid by using Clang's non-standard `enable_if` attribute.
+This code can be made valid by using Clang's non-standard [`enable_if` attribute](https://clang.llvm.org/docs/AttributeReference.html#enable-if).
 
 The pattern is rather simple - we just need to introduce an `operator[]` that statically checks the argument for every possible index. That looks something like this:
 
