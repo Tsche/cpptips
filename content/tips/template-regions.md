@@ -11,8 +11,8 @@ This can happen if you attempt to use P1061 pack-introducing structured bindings
 
 ```cpp
 void f() {
-  // error: can only introduce packs in templates
-  constexpr auto [...Is] = expr;
+  // error: pack declaration outside of template
+  auto [...Is] = expr;
 }
 ```
 
@@ -23,7 +23,7 @@ To avoid turning `f` itself into a template, you can use P1306 expansion stateme
 ```cpp
 void f() {
   template for(auto _:"") {
-    constexpr auto [...Is] = expr;
+    auto [...Is] = expr;
   }
 }
 ```

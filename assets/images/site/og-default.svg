@@ -53,6 +53,6 @@
     <text x="456" y="295" font-size="112" font-weight="700">
       <tspan fill="#111827">cpp.</tspan><tspan fill="#2563eb">tips</tspan>
     </text>
-    <text x="456" y="360" fill="#526079" font-size="26" font-weight="400" letter-spacing="0.2">C++ articles, tips, and updates.</text>
+    <text x="466" y="360" fill="#526079" font-size="26" font-weight="400" letter-spacing="0.2">and other shenanigans</text>
   </g>
 </svg>
