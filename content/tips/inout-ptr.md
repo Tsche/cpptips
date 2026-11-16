@@ -77,4 +77,4 @@ The examples so far have used `unique_ptr` for simplicity, but compatibility ext
 There are also some caveats to know about:
 
 - The pointers should be created inside the function call. You _can_ write `auto o_ptr = std::out_ptr(ptr)` but `ptr` won't be updated until `o_ptr` is destroyed.
-- **You define the contract**. `std::out_ptr` and `std::inout_ptr` can't check whether they are being used for "true" out-ptr and inout-ptr semantics. You decide that by naming the type.
+- **You describe the semantics**. `std::out_ptr` and `std::inout_ptr` can't check whether they are being used for "true" out-ptr and inout-ptr semantics. Your choice of type expresses the intended semantic, and the onus is on you to ensure that you choose the appropriate one.
